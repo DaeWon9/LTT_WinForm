@@ -1,0 +1,14 @@
+C:\Users\82109\source\repos\LectureTime\LectureTime\obj\Debug\LectureTime.csproj.AssemblyReference.cache
+C:\Users\82109\source\repos\LectureTime\LectureTime\obj\Debug\LectureTime.csproj.SuggestedBindingRedirects.cache
+C:\Users\82109\source\repos\LectureTime\LectureTime\obj\Debug\LectureTime.Properties.Resources.resources
+C:\Users\82109\source\repos\LectureTime\LectureTime\obj\Debug\LectureTime.View.LoginForm.resources
+C:\Users\82109\source\repos\LectureTime\LectureTime\obj\Debug\LectureTime.csproj.GenerateResource.cache
+C:\Users\82109\source\repos\LectureTime\LectureTime\obj\Debug\LectureTime.csproj.CoreCompileInputs.cache
+C:\Users\82109\source\repos\LectureTime\LectureTime\bin\Debug\LectureTime.exe.config
+C:\Users\82109\source\repos\LectureTime\LectureTime\bin\Debug\LectureTime.exe
+C:\Users\82109\source\repos\LectureTime\LectureTime\bin\Debug\LectureTime.pdb
+C:\Users\82109\source\repos\LectureTime\LectureTime\obj\Debug\LectureTime.exe
+C:\Users\82109\source\repos\LectureTime\LectureTime\obj\Debug\LectureTime.pdb
+C:\Users\82109\source\repos\LectureTime\LectureTime\obj\Debug\LectureTime.View.SearchForm.resources
+C:\Users\82109\source\repos\LectureTime\LectureTime\obj\Debug\LectureTime.View.MainForm.resources
+C:\Users\82109\source\repos\LectureTime\LectureTime\obj\Debug\LectureTime.View.BasketForm.resources
