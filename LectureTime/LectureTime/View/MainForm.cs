@@ -47,5 +47,6 @@ namespace LectureTime.View
             BasketForm basketForm = new BasketForm();  
             basketForm.ShowDialog();
         }
+
     }
 }
