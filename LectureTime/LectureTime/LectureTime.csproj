@@ -89,6 +89,12 @@
     <Compile Include="View\SearchForm.Designer.cs">
       <DependentUpon>SearchForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\test.Designer.cs">
+      <DependentUpon>test.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -98,6 +104,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\ApplyForm.resx">
+      <DependentUpon>ApplyForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\BasketForm.resx">
       <DependentUpon>BasketForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -109,6 +118,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\SearchForm.resx">
       <DependentUpon>SearchForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\test.resx">
+      <DependentUpon>test.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
