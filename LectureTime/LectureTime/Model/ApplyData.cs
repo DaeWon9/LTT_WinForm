@@ -8,7 +8,7 @@ namespace LectureTime.Model
 {
     internal class ApplyData
     {
-        public List<List<string>> applayDataList = new List<List<string>>();
+        public List<List<string>> applyDataList = new List<List<string>>();
         public int appliedGrade = 0;
 
         private static ApplyData instance;
@@ -22,7 +22,7 @@ namespace LectureTime.Model
 
         public ApplyData()
         {
-            this.applayDataList = new List<List<string>>();
+            this.applyDataList = new List<List<string>>();
         }
     }
 }
