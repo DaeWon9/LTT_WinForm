@@ -69,7 +69,7 @@ namespace LectureTime.Utility
 
         public bool IsLectureNameOverlap(List<List<string>> list, string targetName)
         {
-            for (int row = 1; row < list.Count; row++) // 중복과목 체크
+            for (int row = 0; row < list.Count; row++) // 중복과목 체크
             {
                 if (list[row][Constant.LECTURE_NAME].Equals(targetName))
                 {

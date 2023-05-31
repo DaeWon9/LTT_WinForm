@@ -41,15 +41,15 @@
             this.friday = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.saturday = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
+            this.ExcelSaveButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // SearchModeButton
             // 
-            this.SearchModeButton.Location = new System.Drawing.Point(970, 191);
-            this.SearchModeButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.SearchModeButton.Location = new System.Drawing.Point(849, 153);
             this.SearchModeButton.Name = "SearchModeButton";
-            this.SearchModeButton.Size = new System.Drawing.Size(136, 49);
+            this.SearchModeButton.Size = new System.Drawing.Size(119, 39);
             this.SearchModeButton.TabIndex = 0;
             this.SearchModeButton.Text = "강의검색";
             this.SearchModeButton.UseVisualStyleBackColor = true;
@@ -57,10 +57,9 @@
             // 
             // BasketModeButton
             // 
-            this.BasketModeButton.Location = new System.Drawing.Point(970, 276);
-            this.BasketModeButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.BasketModeButton.Location = new System.Drawing.Point(849, 221);
             this.BasketModeButton.Name = "BasketModeButton";
-            this.BasketModeButton.Size = new System.Drawing.Size(136, 48);
+            this.BasketModeButton.Size = new System.Drawing.Size(119, 38);
             this.BasketModeButton.TabIndex = 1;
             this.BasketModeButton.Text = "관심과목";
             this.BasketModeButton.UseVisualStyleBackColor = true;
@@ -68,10 +67,9 @@
             // 
             // ApplyModeButton
             // 
-            this.ApplyModeButton.Location = new System.Drawing.Point(970, 365);
-            this.ApplyModeButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.ApplyModeButton.Location = new System.Drawing.Point(849, 292);
             this.ApplyModeButton.Name = "ApplyModeButton";
-            this.ApplyModeButton.Size = new System.Drawing.Size(136, 48);
+            this.ApplyModeButton.Size = new System.Drawing.Size(119, 38);
             this.ApplyModeButton.TabIndex = 2;
             this.ApplyModeButton.Text = "수강신청";
             this.ApplyModeButton.UseVisualStyleBackColor = true;
@@ -79,10 +77,9 @@
             // 
             // LogOutButton
             // 
-            this.LogOutButton.Location = new System.Drawing.Point(994, 72);
-            this.LogOutButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.LogOutButton.Location = new System.Drawing.Point(870, 58);
             this.LogOutButton.Name = "LogOutButton";
-            this.LogOutButton.Size = new System.Drawing.Size(86, 29);
+            this.LogOutButton.Size = new System.Drawing.Size(75, 23);
             this.LogOutButton.TabIndex = 3;
             this.LogOutButton.Text = "로그아웃";
             this.LogOutButton.UseVisualStyleBackColor = true;
@@ -100,11 +97,12 @@
             this.thursday,
             this.friday,
             this.saturday});
-            this.dataGridView1.Location = new System.Drawing.Point(19, 22);
+            this.dataGridView1.Location = new System.Drawing.Point(29, 39);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 27;
-            this.dataGridView1.Size = new System.Drawing.Size(919, 1156);
+            this.dataGridView1.Size = new System.Drawing.Size(804, 575);
             this.dataGridView1.TabIndex = 4;
             // 
             // title
@@ -159,26 +157,38 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(970, 447);
+            this.button1.Location = new System.Drawing.Point(849, 358);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(136, 46);
+            this.button1.Size = new System.Drawing.Size(119, 37);
             this.button1.TabIndex = 5;
             this.button1.Text = "시간표 확인";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.setSchedule_Click);
             // 
+            // ExcelSaveButton
+            // 
+            this.ExcelSaveButton.Location = new System.Drawing.Point(849, 423);
+            this.ExcelSaveButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ExcelSaveButton.Name = "ExcelSaveButton";
+            this.ExcelSaveButton.Size = new System.Drawing.Size(119, 37);
+            this.ExcelSaveButton.TabIndex = 6;
+            this.ExcelSaveButton.Text = "엑셀저장";
+            this.ExcelSaveButton.UseVisualStyleBackColor = true;
+            this.ExcelSaveButton.Click += new System.EventHandler(this.ExcelSaveButton_Click);
+            // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1162, 1055);
+            this.ClientSize = new System.Drawing.Size(1017, 669);
+            this.Controls.Add(this.ExcelSaveButton);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.LogOutButton);
             this.Controls.Add(this.ApplyModeButton);
             this.Controls.Add(this.BasketModeButton);
             this.Controls.Add(this.SearchModeButton);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "MainForm";
             this.Text = "MainForm";
             this.Load += new System.EventHandler(this.MainForm_Load);
@@ -193,7 +203,6 @@
         private System.Windows.Forms.Button BasketModeButton;
         private System.Windows.Forms.Button ApplyModeButton;
         private System.Windows.Forms.Button LogOutButton;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn title;
         private System.Windows.Forms.DataGridViewTextBoxColumn monday;
         private System.Windows.Forms.DataGridViewTextBoxColumn tuesday;
@@ -202,5 +211,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn friday;
         private System.Windows.Forms.DataGridViewTextBoxColumn saturday;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button ExcelSaveButton;
+        public System.Windows.Forms.DataGridView dataGridView1;
     }
 }

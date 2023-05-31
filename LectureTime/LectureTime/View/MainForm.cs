@@ -16,9 +16,11 @@ namespace LectureTime.View
 {
     public partial class MainForm : Form
     {
+        private UserServicer userServicer;
         public MainForm()
         {
             InitializeComponent();
+            userServicer = new UserServicer();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -48,7 +50,7 @@ namespace LectureTime.View
                 currentTime += interval;
             }
         }
-        private void setSchedule(string data, string date)
+        public void setSchedule(string data, string date)
         {
             TimeSpan currentTime = TimeSpan.Parse("09:00");
             TimeSpan interval = TimeSpan.FromMinutes(30);
@@ -127,7 +129,7 @@ namespace LectureTime.View
 
         private void ApplyModeButton_Click(object sender, EventArgs e)
         {
-            ApplyForm applyForm = new ApplyForm();  
+            ApplyForm applyForm = new ApplyForm(this);  
             applyForm.ShowDialog();
         }
 
@@ -148,6 +150,19 @@ namespace LectureTime.View
                 data = lectureList[no][4] + "\n" + lectureList[no][9];
                 date = lectureList[no][8];
                 setSchedule(data, date);
+            }
+        }
+
+        private void ExcelSaveButton_Click(object sender, EventArgs e)
+        {
+            if (ApplyData.Get().applyDataList.Count > 0)
+            {
+                userServicer.SaveToExcel();
+                MessageBox.Show(string.Format("엑셀저장이 완료되었습니다!"));
+            }
+            else
+            {
+                MessageBox.Show(string.Format("수강신청 기록이 존재하지않습니다."));
             }
         }
     }

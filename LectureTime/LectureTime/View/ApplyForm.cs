@@ -16,10 +16,11 @@ namespace LectureTime.View
     public partial class ApplyForm : Form
     {
         private LectureTimeSearcher lectureTimeSearcher;
-
-        public ApplyForm()
+        private MainForm mainForm;
+        public ApplyForm(MainForm mainForm)
         {
             InitializeComponent();
+            this.mainForm = mainForm;
         }
 
         private void ApplyForm_Load(object sender, EventArgs e)
@@ -35,6 +36,8 @@ namespace LectureTime.View
                 ApplyGridView.Rows.Add(lectureList[no][0], lectureList[no][1], lectureList[no][2], lectureList[no][3], lectureList[no][4], lectureList[no][5], lectureList[no][6], lectureList[no][7], lectureList[no][8], lectureList[no][9], lectureList[no][10], lectureList[no][11], "취소하기");
             }
         }
+
+ 
 
         private void SearchButton_Click_1(object sender, EventArgs e)
         {
@@ -97,7 +100,7 @@ namespace LectureTime.View
                     return;
                 }
 
-                if (DataProcessing.Get().IsBaskGradeOver(classCount))
+                if (DataProcessing.Get().IsApplyGradeOver(classCount))
                 {
                     MessageBox.Show("등록가능한 학점을 초과하였습니다.");
                     return;
@@ -109,6 +112,16 @@ namespace LectureTime.View
 
                 List<List<string>> lectureList = ApplyData.Get().applyDataList;
 
+                string data = "";
+                string date = "";
+
+                for (int no = 0; no < lectureList.Count; no++)
+                {
+                    data = lectureList[no][4] + "\n" + lectureList[no][9];
+                    date = lectureList[no][8];
+                    mainForm.setSchedule(data, date);
+                }
+
                 if (ApplyGridView.RowCount > 0)
                     ApplyGridView.Rows.Clear();
 
@@ -116,6 +129,79 @@ namespace LectureTime.View
                 {
                     ApplyGridView.Rows.Add(lectureList[no][0], lectureList[no][1], lectureList[no][2], lectureList[no][3], lectureList[no][4], lectureList[no][5], lectureList[no][6], lectureList[no][7], lectureList[no][8], lectureList[no][9], lectureList[no][10], lectureList[no][11], "취소하기");
                 }
+
+                if (BasketData.Get().basketDataList.Count > 0)
+                {
+                    if (SearchResultFormInApply.RowCount > 0)
+                        SearchResultFormInApply.Rows.Clear();
+
+                    List<List<string>> basketLectureList = BasketData.Get().basketDataList;
+                    List<string> noList = ApplyData.Get().GetNoList();
+
+
+
+                    for (int no = 0; no < basketLectureList.Count; no++)
+                    {
+                        if (noList.Contains(basketLectureList[no][0]))
+                            continue;
+                        SearchResultFormInApply.Rows.Add(basketLectureList[no][0], basketLectureList[no][1], basketLectureList[no][2], basketLectureList[no][3], basketLectureList[no][4], basketLectureList[no][5], basketLectureList[no][6], basketLectureList[no][7], basketLectureList[no][8], basketLectureList[no][9], basketLectureList[no][10], basketLectureList[no][11], "수강신청");
+                    }
+                }
+            }
+        }
+
+        private void ApplyGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string name = ApplyGridView.Rows[e.RowIndex].Cells["교과목명2"].Value.ToString();
+
+            if (ApplyGridView.RowCount > 0 && e.RowIndex >= 0 && e.ColumnIndex == this.delete.Index)
+            {
+                ApplyData.Get().applyDataList.RemoveAt(e.RowIndex);
+                MessageBox.Show(string.Format("{0} 과목이 수강신청 과목에서 제거되었습니다!", name));
+
+                List<List<string>> lectureList = ApplyData.Get().applyDataList;
+                string data = "";
+                string date = "";
+
+                for (int no = 0; no < lectureList.Count; no++)
+                {
+                    data = lectureList[no][4] + "\n" + lectureList[no][9];
+                    date = lectureList[no][8];
+                    mainForm.setSchedule(data, date);
+                }
+                if (ApplyGridView.RowCount > 0)
+                    ApplyGridView.Rows.Clear();
+
+                for (int no = 0; no < lectureList.Count; no++)
+                {
+                    ApplyGridView.Rows.Add(lectureList[no][0], lectureList[no][1], lectureList[no][2], lectureList[no][3], lectureList[no][4], lectureList[no][5], lectureList[no][6], lectureList[no][7], lectureList[no][8], lectureList[no][9], lectureList[no][10], lectureList[no][11], "취소하기");
+                }
+
+            }
+        }
+
+        private void BasketButton_Click(object sender, EventArgs e)
+        {
+            if (BasketData.Get().basketDataList.Count > 0)
+            {
+                if (SearchResultFormInApply.RowCount > 0)
+                    SearchResultFormInApply.Rows.Clear();
+
+                List<List<string>> lectureList = BasketData.Get().basketDataList;
+                List<string> noList = ApplyData.Get().GetNoList();
+
+
+
+                for (int no = 0; no < lectureList.Count; no++)
+                {
+                    if (noList.Contains(lectureList[no][0]))
+                        continue;
+                    SearchResultFormInApply.Rows.Add(lectureList[no][0], lectureList[no][1], lectureList[no][2], lectureList[no][3], lectureList[no][4], lectureList[no][5], lectureList[no][6], lectureList[no][7], lectureList[no][8], lectureList[no][9], lectureList[no][10], lectureList[no][11], "수강신청");
+                }
+            }
+            else
+            {
+                MessageBox.Show(string.Format("관심과목이 비어있습니다."));
             }
         }
     }
