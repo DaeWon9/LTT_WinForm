@@ -118,5 +118,27 @@ namespace LectureTime.View
                 }
             }
         }
+
+        private void BasketGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string name = BasketGridView.Rows[e.RowIndex].Cells["교과목명2"].Value.ToString();
+
+            if (BasketGridView.RowCount > 0 && e.RowIndex >= 0 && e.ColumnIndex == this.delete.Index)
+            {
+                BasketData.Get().basketDataList.RemoveAt(e.RowIndex);
+                MessageBox.Show(string.Format("{0} 과목이 관심과목에서 제거되었습니다!", name));
+
+                List<List<string>> lectureList = BasketData.Get().basketDataList;
+
+                if (BasketGridView.RowCount > 0)
+                    BasketGridView.Rows.Clear();
+
+                for (int no = 0; no < lectureList.Count; no++)
+                {
+                    BasketGridView.Rows.Add(lectureList[no][0], lectureList[no][1], lectureList[no][2], lectureList[no][3], lectureList[no][4], lectureList[no][5], lectureList[no][6], lectureList[no][7], lectureList[no][8], lectureList[no][9], lectureList[no][10], lectureList[no][11], "취소하기");
+                }
+
+            }
+        }
     }
 }
