@@ -57,14 +57,5 @@ namespace LectureTime.View
                 SearchResultView.Rows.Add(lectureList[no][0], lectureList[no][1], lectureList[no][2], lectureList[no][3], lectureList[no][4], lectureList[no][5], lectureList[no][6], lectureList[no][7], lectureList[no][8], lectureList[no][9], lectureList[no][10], lectureList[no][11]);
             }
         }
-
-        private void BackButton_Click(object sender, EventArgs e)
-        {
-            this.Visible = false;
-
-            LoginForm loginForm = new LoginForm();
-
-            loginForm.ShowDialog();
-        }
     }
 }

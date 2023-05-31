@@ -52,7 +52,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.BackButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.SearchResultView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -265,22 +264,11 @@
             this.label5.TabIndex = 11;
             this.label5.Text = "교수명";
             // 
-            // BackButton
-            // 
-            this.BackButton.Location = new System.Drawing.Point(1029, 12);
-            this.BackButton.Name = "BackButton";
-            this.BackButton.Size = new System.Drawing.Size(98, 23);
-            this.BackButton.TabIndex = 12;
-            this.BackButton.Text = "뒤로가기";
-            this.BackButton.UseVisualStyleBackColor = true;
-            this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
-            // 
-            // MainForm
+            // SearchForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1140, 425);
-            this.Controls.Add(this.BackButton);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -293,7 +281,7 @@
             this.Controls.Add(this.GradeDropDown);
             this.Controls.Add(this.ClassificationDropDown);
             this.Controls.Add(this.DepartmentDropDown);
-            this.Name = "MainForm";
+            this.Name = "SearchForm";
             this.Text = "MainForm";
             this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.SearchResultView)).EndInit();
@@ -328,6 +316,5 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button BackButton;
     }
 }
