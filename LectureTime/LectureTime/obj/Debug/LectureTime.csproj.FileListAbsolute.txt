@@ -58,3 +58,5 @@ C:\Users\82109\Desktop\DaeWon\C# LTT\LTT_WinForm\LectureTime\LectureTime\obj\Deb
 C:\Users\82109\Desktop\DaeWon\C# LTT\LTT_WinForm\LectureTime\LectureTime\obj\Debug\LectureTime.csproj.CoreCompileInputs.cache
 C:\Users\82109\Desktop\DaeWon\C# LTT\LTT_WinForm\LectureTime\LectureTime\obj\Debug\LectureTime.exe
 C:\Users\82109\Desktop\DaeWon\C# LTT\LTT_WinForm\LectureTime\LectureTime\obj\Debug\LectureTime.pdb
+C:\Users\ensharp\Desktop\LTT_WinForm\LectureTime\LectureTime\obj\Debug\LectureTime.View.ApplyForm.resources
+C:\Users\ensharp\Desktop\LTT_WinForm\LectureTime\LectureTime\obj\Debug\LectureTime.View.test.resources
